@@ -1,0 +1,153 @@
+:root {
+  --primary-color: rgb(121, 119, 245);
+  --primary-color-shadow: rgba(103, 101, 228, 0.3);
+  --primary-color-darker: rgb(50, 49, 110);
+  --secondary-color: rgb(103, 101, 228);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body * {
+  margin: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 30px;
+}
+header .header-title {
+  display: inline-block;
+  color: #ffffff;
+  margin: 0;
+  margin-left: 10px;
+}
+header .header-logo img {
+  filter: invert(100%);
+}
+
+nav {
+  width: 100%;
+  background-color: var(--secondary-color);
+  position: sticky;
+  top: 0;
+}
+nav .nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+nav .nav-list .nav-list_item, nav .nav-list .nav-list_item .link {
+  color: white;
+  padding: 12px 0px;
+}
+
+main {
+  min-height: 90vh;
+  padding: 30px;
+  font-size: 1.1em;
+}
+main section {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+main section article {
+  margin-bottom: 20px;
+}
+main section article h3, main section article .article-title {
+  margin: 6px 0;
+}
+main .paginacao h2, main .paginacao .article-title {
+  margin: 12px 0;
+  width: 100%;
+  background-color: var(--primary-color-shadow);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+main .paginacao p, main .paginacao .text {
+  text-indent: 40px;
+  text-align: justify;
+}
+main .galeria {
+  width: 100%;
+  display: grid;
+  gap: 8px 6px;
+}
+main .galeria .galeria-imagem {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color-shadow);
+}
+main .galeria .floating-painel {
+  background: var(--secondary-color);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .galeria .floating-painel .floating-painel-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+main .galeria .floating-painel .prev, main .galeria .floating-painel .next {
+  width: 30px;
+  height: 100%;
+  font-size: 20pt;
+  font-weight: bolder;
+  color: #ffffff;
+  background: var(--primary-color);
+  border: none;
+}
+main .galeria .floating-painel .prev {
+  margin-right: 30px;
+}
+main .galeria .floating-painel .next {
+  margin-left: 30px;
+}
+
+footer {
+  padding: 12px 20px;
+  background-color: var(--primary-color-shadow);
+}
+
+@media screen and (min-width: 1024px) {
+  .galeria {
+    background-color: yellow;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px 0px;
+  }
+  .galeria .floating-painel {
+    padding: 80px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .galeria {
+    background-color: green;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120"
+   height="120"
+   viewBox="0 0 31.749999 31.750001"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo-g.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="3.4459287"
+     inkscape:cx="66.745433"
+     inkscape:cy="55.717927"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="0,31.75"
+       orientation="0,120"
+       id="guide1553" />
+    <sodipodi:guide
+       position="31.75,31.75"
+       orientation="120,0"
+       id="guide1555" />
+    <sodipodi:guide
+       position="31.75,0"
+       orientation="0,-120"
+       id="guide1557" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="-120,0"
+       id="guide1559" />
+    <sodipodi:guide
+       position="-8.8817839e-16,11.90625"
+       orientation="0,-1"
+       id="guide2769" />
+    <sodipodi:guide
+       position="19.843749,19.843751"
+       orientation="0,-1"
+       id="guide2771" />
+    <sodipodi:guide
+       position="18.54558,18.545584"
+       orientation="1,0"
+       id="guide3238" />
+    <sodipodi:guide
+       position="25.147727,19.843752"
+       orientation="1,0"
+       id="guide3695" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke-width:1.99401;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect887"
+       width="11.943309"
+       height="7.9375"
+       x="13.204419"
+       y="-3.3839596e-14" />
+    <rect
+       style="fill:#000000;stroke-width:1.62557;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect887-4"
+       width="7.9375005"
+       height="7.9375"
+       x="11.906249"
+       y="-7.9375"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#000000;stroke-width:2.57025;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect887-7"
+       width="19.84375"
+       height="7.9375"
+       x="11.90625"
+       y="23.8125" />
+    <rect
+       style="fill:#000000;stroke-width:2.09664;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect887-7-7"
+       width="13.204419"
+       height="7.9375"
+       x="18.54558"
+       y="11.90625" />
+    <rect
+       style="fill:#000000;stroke-width:2.09664;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect887-7-7-1"
+       width="13.204419"
+       height="7.9375"
+       x="18.54558"
+       y="-31.75"
+       transform="rotate(90)" />
+    <path
+       style="color:#000000;fill:#000000;stroke-width:0.988109;-inkscape-stroke:none;paint-order:markers stroke fill"
+       d="M 0,18.545583 V 19.265438 31.75 H 13.204419 V 18.545583 Z m 1.439711,1.43971 H 11.764708 V 30.31029 H 1.439711 Z"
+       id="rect1847-3" />
+    <path
+       style="color:#000000;fill:#000000;stroke-width:0.988109;-inkscape-stroke:none;paint-order:markers stroke fill"
+       d="M 0,0 V 0.719855 13.204417 H 13.204419 V 0 Z M 1.439711,1.43971 H 11.764708 V 11.764707 H 1.439711 Z"
+       id="rect1847-3-9" />
+  </g>
+</svg>

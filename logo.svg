@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="120" height="120" version="1.1" viewBox="0 0 31.75 31.75" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <g stroke-linecap="square" stroke-linejoin="round">
+   <rect x="-4.4409e-15" y="-3.384e-14" width="19.844" height="7.9375" stop-color="#000000" stroke-width="2.5702" style="paint-order:stroke fill markers"/>
+   <rect x="11.906" y="23.812" width="19.844" height="7.9375" stop-color="#000000" stroke-width="2.5702" style="paint-order:stroke fill markers"/>
+   <rect x="-8.8818e-16" y="11.906" width="31.75" height="7.9375" stop-color="#000000" stroke-width="3.2511" style="paint-order:stroke fill markers"/>
+  </g>
+  <path d="m18.546 0v13.204h13.204v-13.204zm1.4397 1.4397h10.325v10.325h-10.325z" color="#000000" stroke-width=".98811" style="-inkscape-stroke:none;paint-order:markers stroke fill"/>
+  <path d="m0 18.546v13.204h13.204v-13.204zm1.4397 1.4397h10.325v10.325h-10.325z" color="#000000" stroke-width=".98811" style="-inkscape-stroke:none;paint-order:markers stroke fill"/>
+ </g>
+</svg>
