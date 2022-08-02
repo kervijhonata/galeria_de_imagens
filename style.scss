@@ -14,9 +14,12 @@ html {
    scroll-behavior: smooth;
 }
 
-body * {
-    margin: 0;
+body {
     font-family: sans-serif;
+    text-decoration: none;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -78,7 +81,7 @@ main {
             margin: 12px 0;
             width: 100%;
             background-color: var(--primary-color-shadow);
-            padding: 8px 12px;
+            padding: 20px 30px;
             border-radius: 4px;
         }
         p, .text {
@@ -89,8 +92,7 @@ main {
 
     .galeria {
         width: 100%;
-        display: grid;
-        gap: 8px 6px;
+        gap: 20px;
 
         .galeria-imagem {
             width: 100%;
@@ -98,6 +100,7 @@ main {
             border: none;
             border-radius: 4px;
             background-color: var(--primary-color-shadow);
+            margin-bottom: 14px;
         }
 
         .floating-painel {
@@ -141,14 +144,17 @@ main {
 
 footer {
     padding: 12px 20px;
+    font-size: 12pt;
+    font-family: monospace;
     background-color: var(--primary-color-shadow);
 }
 
 @media screen and (min-width: 1024px) {
     .galeria {
-        background-color: yellow;
-        grid-template-columns: repeat(5, 1fr);
+        // background-color: yellow;
         gap: 12px 0px;
+        column-count: 4;
+
         .floating-painel {
             padding: 80px;
         }
@@ -156,13 +162,14 @@ footer {
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .galeria {
-        background-color: green;
-        grid-template-columns: repeat(3, 1fr);
+        column-count: 2;
+        // background-color: green;
     }
 }
 @media screen and (max-width: 767px){
     .galeria {
-        grid-template-columns: repeat(2, 1fr);
+        column-count: 1;
+        // background-color: blue;
     }
 
 }
