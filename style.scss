@@ -104,6 +104,7 @@ main {
             background-color: var(--primary-color-shadow);
             margin-bottom: 14px;
             transition: transform 0.3s ease-in-out;
+            z-index: 0;
 
             &:hover {
                 transform: scale(1.12);
@@ -112,7 +113,7 @@ main {
         }
 
         .modal {
-            background: var(--secondary-color);
+            background: rgba(103, 101, 228, .1);
             backdrop-filter: blur(5px);
             position: fixed;
             top: 0;
@@ -122,13 +123,16 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            // padding: 30px;
-
+            z-index: 10;
                 
             .modal-image {
                 // min-width: 80vw;
                 max-width: 90%;
-                max-height: 90%;
+                max-height: 100%;
+                border-radius: 5px;
+                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
+                // background: var(--primary-color-darker);
+                // padding: 3px;
             }
 
             .btnClose {
@@ -186,7 +190,7 @@ footer {
 
 @media screen and (min-width: 1024px) {
     main {
-        padding: 40px 10vw;
+        padding: 40px 6vw;
     }
     .galeria {
         // background-color: yellow;
