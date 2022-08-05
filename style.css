@@ -101,7 +101,7 @@ main .galeria .galeria-imagem:hover {
   transform: scale(1.12);
   box-shadow: 0px 4px 12px var(--primary-color-shadow);
 }
-main .galeria .floating-painel {
+main .galeria .modal {
   background: var(--secondary-color);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -113,11 +113,11 @@ main .galeria .floating-painel {
   justify-content: center;
   align-items: center;
 }
-main .galeria .floating-painel .floating-painel-image {
+main .galeria .modal .modal-image {
   max-width: 90%;
   max-height: 90%;
 }
-main .galeria .floating-painel .btnClose {
+main .galeria .modal .btnClose {
   position: absolute;
   top: 12px;
   right: 20px;
@@ -131,7 +131,7 @@ main .galeria .floating-painel .btnClose {
   color: white;
   line-height: 30px;
 }
-main .galeria .floating-painel .prev, main .galeria .floating-painel .next {
+main .galeria .modal .prev, main .galeria .modal .next {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -141,13 +141,18 @@ main .galeria .floating-painel .prev, main .galeria .floating-painel .next {
   background: var(--primary-color);
   border: none;
   position: absolute;
-  line-height: 60px;
   text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: monospace;
 }
-main .galeria .floating-painel .prev {
+main .galeria .modal .prev:hover, main .galeria .modal .next:hover {
+  background: var(--primary-color-darker);
+}
+main .galeria .modal .prev {
   left: 30px;
 }
-main .galeria .floating-painel .next {
+main .galeria .modal .next {
   right: 30px;
 }
 
@@ -167,7 +172,7 @@ footer {
     gap: 12px 0px;
     column-count: 4;
   }
-  .galeria .floating-painel {
+  .galeria .modal {
     padding: 80px;
   }
 }
@@ -180,14 +185,13 @@ footer {
   main {
     padding: 40px 12px;
   }
-
-  .galeria {
+  main .galeria {
     column-count: 1;
   }
-  .galeria .floating-painel .floating-painel-image {
+  main .galeria .modal .modal-image {
     transform: none;
   }
-  .galeria .floating-painel .floating-painel-image:hover {
+  main .galeria .modal .modal-image:hover {
     transform: none;
   }
 }

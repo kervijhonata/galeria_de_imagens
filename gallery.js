@@ -1,7 +1,7 @@
 let imagens = document.querySelectorAll(".galeria .galeria-imagem");
-let painel = document.querySelector(".galeria .floating-painel");
+let painel = document.querySelector(".galeria .modal");
 painel.addEventListener('click', close, {capture:false});
-var imagemDoPainel = document.querySelector(".galeria .floating-painel .floating-painel-image");
+var imagemDoPainel = document.querySelector(".galeria .modal .modal-image");
 let btnClose = document.querySelector(".btnClose");
 painel.style.visibility = "hidden";
 
@@ -21,7 +21,7 @@ function open(evt) {
 }
 
 function close(e) {
-    if(e.target.classList == "floating-painel"){
+    if(e.target.classList == "modal"){
         painel.style.visibility = "hidden";
     }
 }
