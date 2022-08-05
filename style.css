@@ -27,6 +27,7 @@ header {
   width: 100%;
   background-color: var(--primary-color);
   padding: 30px;
+  z-index: 10;
 }
 header .header-title {
   display: inline-block;
@@ -85,6 +86,7 @@ main .paginacao p, main .paginacao .text {
 main .galeria {
   width: 100%;
   gap: 20px;
+  z-index: 1;
 }
 main .galeria .galeria-imagem {
   width: 100%;
@@ -93,6 +95,11 @@ main .galeria .galeria-imagem {
   border-radius: 4px;
   background-color: var(--primary-color-shadow);
   margin-bottom: 14px;
+  transition: transform 0.3s ease-in-out;
+}
+main .galeria .galeria-imagem:hover {
+  transform: scale(1.12);
+  box-shadow: 0px 4px 12px var(--primary-color-shadow);
 }
 main .galeria .floating-painel {
   background: var(--secondary-color);
@@ -107,23 +114,41 @@ main .galeria .floating-painel {
   align-items: center;
 }
 main .galeria .floating-painel .floating-painel-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
+}
+main .galeria .floating-painel .btnClose {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 16pt;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 4px 24px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--primary-color-darker);
+  color: white;
+  line-height: 30px;
 }
 main .galeria .floating-painel .prev, main .galeria .floating-painel .next {
-  width: 30px;
-  height: 100%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   font-size: 20pt;
   font-weight: bolder;
   color: #ffffff;
   background: var(--primary-color);
   border: none;
+  position: absolute;
+  line-height: 60px;
+  text-align: center;
 }
 main .galeria .floating-painel .prev {
-  margin-right: 30px;
+  left: 30px;
 }
 main .galeria .floating-painel .next {
-  margin-left: 30px;
+  right: 30px;
 }
 
 footer {
@@ -134,6 +159,10 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+  main {
+    padding: 40px 10vw;
+  }
+
   .galeria {
     gap: 12px 0px;
     column-count: 4;
@@ -148,8 +177,18 @@ footer {
   }
 }
 @media screen and (max-width: 767px) {
+  main {
+    padding: 40px 12px;
+  }
+
   .galeria {
     column-count: 1;
+  }
+  .galeria .floating-painel .floating-painel-image {
+    transform: none;
+  }
+  .galeria .floating-painel .floating-painel-image:hover {
+    transform: none;
   }
 }
 
