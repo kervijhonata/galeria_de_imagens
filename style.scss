@@ -213,13 +213,22 @@ footer {
         padding: 40px 12px;
         .galeria {
             column-count: 1;
-            // background-color: blue;
-            .modal .modal-image {
-                transform: none;
+            .galeria-imagem, img {
                 &:hover {
                     transform: none;
                 }
-            
+            }
+            .modal {
+                .next, .prev {
+                    filter: opacity(40%);
+                    transition-property: filter;
+                    transition-duration: .5s;
+                    transition-timing-function: ease-in-out;
+                    &:focus, 
+                    &:hover {
+                        filter: opacity(100%);
+                    }
+                }
             }
         }
     }

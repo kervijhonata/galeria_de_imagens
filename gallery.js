@@ -5,6 +5,7 @@ const btnMoves = document.querySelectorAll(".image-action");
 
 painel.addEventListener('click', close, {capture:false});
 painel.style.visibility = "hidden";
+window.addEventListener('keyup', move); // Iterar a galeria com botões
 
 let x = 0;
 for(imagem of imagens){
@@ -15,13 +16,17 @@ for(imagem of imagens){
 
 let ref = 0;
 function open(evt) {
-    evt.stopPropagation();
-    let sourceURL = evt.target.getAttribute('src');
-    imagemDoPainel.setAttribute('src', sourceURL);
-    painel.style.visibility = "visible";
-    imagemDoPainel.dataset.reference = evt.target.dataset.reference;
-    ref = evt.target.dataset.reference;
-    console.log(`OPEN: ref >> ${ref}, imagemDoPainel.ref >> ${imagemDoPainel.dataset.reference}`)
+    if(imagens.length > 0){
+        evt.stopPropagation();
+        let sourceURL = evt.target.getAttribute('src');
+        imagemDoPainel.setAttribute('src', sourceURL);
+        painel.style.visibility = "visible";
+        imagemDoPainel.dataset.reference = evt.target.dataset.reference;
+        ref = evt.target.dataset.reference;
+        console.log(`OPEN: ref >> ${ref}, imagemDoPainel.ref >> ${imagemDoPainel.dataset.reference}`)
+    }else{
+        console.log("There is no images selected")
+    }
 }
 
 function close(e) {
@@ -35,80 +40,26 @@ for(btn of btnMoves){
 }
 
 function move(e) {
-    var direction = e.target.classList[0]; //Captura a direção do botão
-    direction == "next" ? ++ref : --ref; //Itera a referência
-    if(ref >= 0 && ref <= imagens.length-1){
+    // console.log(e.type, e.key)
+    if(painel.style.visibility == "visible"){
+        if(e.type == "click"){
+            var direction = e.target.key || e.target.classList[0]; //Captura a direção da tecla ou do botão
+            direction == "next" ? ++ref :--ref; //Itera a referência
+            if(e.target.key) console.log()
+        }
+        else if(e.type == "keyup"){
+            var direction = e.key;
+            direction == "ArrowLeft" ? --ref : "";
+            direction == "ArrowRight" ? ++ref : "";
+        }
+        if(ref >= 0 && ref <= imagens.length-1){
+            imagemDoPainel.setAttribute('src', imagens[ref].src)
+        } else {
+            ref < 0 ? ref = imagens.length-1 : ""; // console.log("ref < 0: setted "+ref)
+            ref > imagens.length-1 ? ref = 0 : ""; // console.log("ref is bigger than imagen length: setted "+ref)
+        }
         imagemDoPainel.setAttribute('src', imagens[ref].src)
-    } else {
-        ref < 0 ? ref = imagens.length-1 : ""; // console.log("ref < 0: setted "+ref)
-        ref > imagens.length-1 ? ref = 0 : ""; // console.log("ref is bigger than imagen length: setted "+ref)
+    }else{
+        console.log("Modal:Painel is hidden, can't move images");
     }
-    imagemDoPainel.setAttribute('src', imagens[ref].src)
 } // 10 Linhas
-
-
-    // // if(ref <= 0 || ref > imagens.length){
-    // //     ref = 1;
-    // //     imagemDoPainel.setAttribute("src", imagens[ref-1].src);
-    // // }
-    // if(ref > 0 && ref <= imagens.length){
-    //     console.log('ref OK')
-    //     if(direction == "next"){
-    //         // ref > 0 ? ref += 1 : ref = 1;
-    //         ref += 1;
-    //         imagemDoPainel.dataset.reference = ref;
-    //     }else if(direction == "prev"){
-    //         // ref > 0 ? ref -= 1 : ref = 1;
-    //         ref < 1 ? ref = imagens.length : ref -= 1;
-    //         imagemDoPainel.dataset.reference = ref;
-    //     }
-
-    //     if(imagens[ref-1]){
-    //         imagemDoPainel.setAttribute("src", imagens[ref-1].src)
-    //     }else{
-    //         imagemDoPainel.setAttribute("src", imagens[0].src)
-    //     }
-    //     console.log(`imagem ${imagens[ref-1].dataset.reference}: \n
-    //     src >> ${imagens[ref-1].src} \n
-    //     data-reference >> ${imagens[ref-1].dataset.reference} \n
-    //     current ref >> ${ref} \n
-    //     index >> [ref-1] == ${ref-1} \n
-    //     `);
-    // }else{
-    //     console.log("ref vai pro ultimo")
-    //     ref = imagens.length;
-    //     imagemDoPainel.setAttribute("src", imagens[ref-1].src)
-    // }
-    // // console.log(`MOVE: ref >> ${ref}, imagemDoPainel.ref >> ${imagemDoPainel.dataset.reference}`) // 32 Linhas
-
-
-
-
-/*
-function move(e){ // WITH DEBUG LOGS
-var direction = e.target.classList[0];
-    direction == "next" ? ++ref : --ref;
-
-    if(ref >= 0 && ref <= imagens.length-1){
-        console.log("execute case 01 >> ref: "+ref)
-
-        imagemDoPainel.setAttribute('src', imagens[ref].src)
-
-        console.log(direction, ref)
-
-    }else {
-        console.log("execute case 02 >> ref: "+ref)
-        if(ref < 0){
-            ref = imagens.length-1
-            console.log("ref < 0: setted "+ref)
-            imagemDoPainel.setAttribute('src', imagens[ref].src)
-        }
-        else if(ref > imagens.length-1){
-            ref = 0
-            console.log("ref is bigger than imagen length: setted "+ref)
-            imagemDoPainel.setAttribute('src', imagens[ref].src)
-        }
-    } // 23 Linhas
-
-}
-*/

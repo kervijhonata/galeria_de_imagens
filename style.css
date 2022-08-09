@@ -192,11 +192,17 @@ footer {
   main .galeria {
     column-count: 1;
   }
-  main .galeria .modal .modal-image {
+  main .galeria .galeria-imagem:hover, main .galeria img:hover {
     transform: none;
   }
-  main .galeria .modal .modal-image:hover {
-    transform: none;
+  main .galeria .modal .next, main .galeria .modal .prev {
+    filter: opacity(40%);
+    transition-property: filter;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+  main .galeria .modal .next:focus, main .galeria .modal .next:hover, main .galeria .modal .prev:focus, main .galeria .modal .prev:hover {
+    filter: opacity(100%);
   }
 }
 
