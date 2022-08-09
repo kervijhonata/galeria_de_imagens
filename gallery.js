@@ -5,6 +5,7 @@ const btnMoves = document.querySelectorAll(".image-action");
 
 painel.addEventListener('click', close, {capture:false});
 painel.style.visibility = "hidden";
+window.addEventListener('keyup', move); // Iterar a galeria com botões
 
 let x = 0;
 for(imagem of imagens){
@@ -15,13 +16,17 @@ for(imagem of imagens){
 
 let ref = 0;
 function open(evt) {
-    evt.stopPropagation();
-    let sourceURL = evt.target.getAttribute('src');
-    imagemDoPainel.setAttribute('src', sourceURL);
-    painel.style.visibility = "visible";
-    imagemDoPainel.dataset.reference = evt.target.dataset.reference;
-    ref = evt.target.dataset.reference;
-    console.log(`OPEN: ref >> ${ref}, imagemDoPainel.ref >> ${imagemDoPainel.dataset.reference}`)
+    if(imagens.length > 0){
+        evt.stopPropagation();
+        let sourceURL = evt.target.getAttribute('src');
+        imagemDoPainel.setAttribute('src', sourceURL);
+        painel.style.visibility = "visible";
+        imagemDoPainel.dataset.reference = evt.target.dataset.reference;
+        ref = evt.target.dataset.reference;
+        console.log(`OPEN: ref >> ${ref}, imagemDoPainel.ref >> ${imagemDoPainel.dataset.reference}`)
+    }else{
+        console.log("There is no images selected")
+    }
 }
 
 function close(e) {
@@ -35,13 +40,28 @@ for(btn of btnMoves){
 }
 
 function move(e) {
-    var direction = e.target.classList[0]; //Captura a direção do botão
-    direction == "next" ? ++ref : --ref; //Itera a referência
-    if(ref >= 0 && ref <= imagens.length-1){
+    // console.log(e.type, e.key)
+    if(painel.style.visibility == "visible"){
+        if(e.type == "click"){
+            var direction = e.target.key || e.target.classList[0]; //Captura a direção da tecla ou do botão
+            direction == "next" ? ++ref :--ref; //Itera a referência
+            if(e.target.key) console.log()
+        }
+        else if(e.type == "keyup"){
+            var direction = e.key;
+            direction == "ArrowLeft" ? --ref : "";
+            direction == "ArrowRight" ? ++ref : "";
+        }
+        if(ref >= 0 && ref <= imagens.length-1){
+            imagemDoPainel.setAttribute('src', imagens[ref].src)
+        } else {
+            ref < 0 ? ref = imagens.length-1 : ""; // console.log("ref < 0: setted "+ref)
+            ref > imagens.length-1 ? ref = 0 : ""; // console.log("ref is bigger than imagen length: setted "+ref)
+        }
         imagemDoPainel.setAttribute('src', imagens[ref].src)
-    } else {
-        ref < 0 ? ref = imagens.length-1 : ""; // console.log("ref < 0: setted "+ref)
-        ref > imagens.length-1 ? ref = 0 : ""; // console.log("ref is bigger than imagen length: setted "+ref)
+    }else{
+        console.log("Modal:Painel is hidden, can't move images");
     }
+
     imagemDoPainel.setAttribute('src', imagens[ref].src)
 }
