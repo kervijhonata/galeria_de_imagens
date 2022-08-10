@@ -1,6 +1,6 @@
 const imagens = document.querySelectorAll(".galeria .galeria-imagem");
-const painel = document.querySelector(".galeria .modal");
-const imagemDoPainel = document.querySelector(".galeria .modal .modal-image");
+const painel = document.querySelector(".modal");
+const imagemDoPainel = document.querySelector(".modal .modal-image");
 const btnMoves = document.querySelectorAll(".image-action");
 
 painel.addEventListener('click', close, {capture:false});
@@ -65,3 +65,10 @@ function move(e) {
 
     imagemDoPainel.setAttribute('src', imagens[ref].src)
 }
+
+// Função de Arrasto
+
+let iterator = 0; 
+window.addEventListener("touchmove", (e)=>{
+    console.log(iterator++, e)
+});

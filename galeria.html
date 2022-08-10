@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="night-schema">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Galeria</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <a class="header-logo" href="index.html">
-            <img src="logo-g.svg" alt="" width="30px" class="logo-image">
+            <img src="img/logo-g.svg" alt="" width="30px" class="logo-image">
             <h1 class="header-title">Gallery</h1>
         </a>
     </header>
@@ -41,12 +41,12 @@
             <img src="https://i.pinimg.com/564x/10/05/b9/1005b94e91740688b65c1710de494708.jpg" class="galeria-imagem" alt="">
             <img src="https://i.pinimg.com/564x/17/25/96/17259680df2d7d90b88f7e442d520708.jpg" class="galeria-imagem" alt="">
             <img src="https://i.pinimg.com/564x/db/28/57/db28577dd9500b4051cf3d7f6592a3ae.jpg" class="galeria-imagem" alt="">
-            <div class="modal" hidden>
-                <button class="prev image-action">&lt;</button>
-                <img src="#" alt="floating text" class="modal-image" data-reference="0">
-                <!-- <button class="btnClose">X</button> -->
-                <button class="next image-action">&gt;</button>
-            </div>
+        </div>
+        <div class="modal" hidden>
+            <button class="prev image-action">&lt;</button>
+            <img src="#" alt="floating text" class="modal-image" data-reference="0">
+            <!-- <button class="btnClose">X</button> -->
+            <button class="next image-action">&gt;</button>
         </div>
     </main>
     <footer>
@@ -54,6 +54,6 @@
         <p>JoBA Labs&reg; <span class="pwrk-fill">_getYear_</span></p>
     </footer>
     <script type="module" src="main.js"></script>
-    <script type="text/javascript" src="gallery.js"></script>
+    <script type="text/javascript" src="modules/gallery.js"></script>
 </body>
 </html>

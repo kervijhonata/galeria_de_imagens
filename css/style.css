@@ -1,4 +1,5 @@
 :root {
+  --text-color: white;
   --primary-color: rgb(121, 119, 245);
   --primary-color-shadow: rgba(103, 101, 228, 0.3);
   --primary-color-darker: rgb(50, 49, 110);
@@ -31,7 +32,7 @@ header {
 }
 header .header-title {
   display: inline-block;
-  color: #ffffff;
+  color: var(--text-color);
   margin: 0;
   margin-left: 10px;
 }
@@ -53,7 +54,7 @@ nav .nav-list {
   gap: 60px;
 }
 nav .nav-list .nav-list_item, nav .nav-list .nav-list_item .link {
-  color: white;
+  color: var(--text-color);
   padding: 12px 0px;
 }
 
@@ -85,7 +86,7 @@ main .paginacao p, main .paginacao .text {
 }
 main .galeria {
   width: 100%;
-  gap: 20px;
+  column-gap: 20px;
   z-index: 1;
 }
 main .galeria .galeria-imagem {
@@ -93,8 +94,8 @@ main .galeria .galeria-imagem {
   height: auto;
   border: none;
   border-radius: 4px;
+  margin-bottom: 10px;
   background-color: var(--primary-color-shadow);
-  margin-bottom: 14px;
   transition: transform 0.3s ease-in-out;
   z-index: 0;
 }
@@ -102,7 +103,7 @@ main .galeria .galeria-imagem:hover {
   transform: scale(1.12);
   box-shadow: 0px 4px 12px var(--primary-color-shadow);
 }
-main .galeria .modal {
+main .modal {
   background: rgba(103, 101, 228, 0.1);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -115,13 +116,13 @@ main .galeria .modal {
   align-items: center;
   z-index: 10;
 }
-main .galeria .modal .modal-image {
+main .modal .modal-image {
   max-width: 90%;
   max-height: 100%;
   border-radius: 5px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
 }
-main .galeria .modal .btnClose {
+main .modal .btnClose {
   position: absolute;
   top: 12px;
   right: 20px;
@@ -132,31 +133,35 @@ main .galeria .modal .btnClose {
   border-radius: 4px;
   border: none;
   background-color: var(--primary-color-darker);
-  color: white;
+  color: var(--text-color);
   line-height: 30px;
 }
-main .galeria .modal .prev, main .galeria .modal .next {
+main .modal .prev, main .modal .next {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   font-size: 20pt;
   font-weight: bolder;
-  color: #ffffff;
-  background: var(--primary-color);
+  color: var(--primary-color);
+  background: var(--text-color);
   border: none;
   position: absolute;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-family: monospace;
+  transition-property: filter;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  filter: opacity(25%);
 }
-main .galeria .modal .prev:hover, main .galeria .modal .next:hover {
-  background: var(--primary-color-darker);
+main .modal .prev:hover, main .modal .prev:focus:not(:focus-visible), main .modal .next:hover, main .modal .next:focus:not(:focus-visible) {
+  filter: opacity(70%);
 }
-main .galeria .modal .prev {
+main .modal .prev {
   left: 30px;
 }
-main .galeria .modal .next {
+main .modal .next {
   right: 30px;
 }
 
@@ -171,12 +176,11 @@ footer {
   main {
     padding: 40px 6vw;
   }
-
-  .galeria {
-    gap: 12px 0px;
+  main .galeria {
+    gap: 20px;
     column-count: 4;
   }
-  .galeria .modal {
+  main .modal {
     padding: 80px;
   }
 }
@@ -194,15 +198,6 @@ footer {
   }
   main .galeria .galeria-imagem:hover, main .galeria img:hover {
     transform: none;
-  }
-  main .galeria .modal .next, main .galeria .modal .prev {
-    filter: opacity(40%);
-    transition-property: filter;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
-  }
-  main .galeria .modal .next:focus, main .galeria .modal .next:hover, main .galeria .modal .prev:focus, main .galeria .modal .prev:hover {
-    filter: opacity(100%);
   }
 }
 
